@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-shapes" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="topbar">
+    <h1>Mini Arcade</h1>
+    <div class="topbar-controls">
+      <button id="darkModeBtn" class="chip" aria-pressed="false">Dark Mode</button>
+      <button id="musicBtn" class="chip" aria-pressed="false">Music Off</button>
+      <button id="sfxBtn" class="chip" aria-pressed="true">SFX On</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="homeView" class="view active">
+      <div class="hero card">
+        <h2>Welcome to Mini Arcade</h2>
+        <p>Pick a game, beat your best score, and enjoy smooth arcade fun in one page.</p>
+      </div>
+
+      <section class="cards-grid" id="gameMenu" aria-label="Game menu">
+        <article class="game-card" data-game="tictactoe">
+          <h3>Tic Tac Toe</h3>
+          <p>Classic 2-player strategy game.</p>
+          <button>Play</button>
+        </article>
+        <article class="game-card" data-game="snake">
+          <h3>Snake</h3>
+          <p>Eat food, grow longer, avoid crashing.</p>
+          <button>Play</button>
+        </article>
+        <article class="game-card" data-game="rps">
+          <h3>Rock Paper Scissors</h3>
+          <p>Battle the computer in quick rounds.</p>
+          <button>Play</button>
+        </article>
+        <article class="game-card" data-game="memory">
+          <h3>Memory Match</h3>
+          <p>Match all card pairs in minimum moves.</p>
+          <button>Play</button>
+        </article>
+        <article class="game-card" data-game="clicktest">
+          <h3>Click Speed Test</h3>
+          <p>Click as fast as you can in 5 seconds.</p>
+          <button>Play</button>
+        </article>
+      </section>
+
+      <section class="leaderboard card">
+        <h3>Leaderboard</h3>
+        <ul id="leaderboardList"></ul>
+      </section>
+    </section>
+
+    <section id="gameView" class="view" aria-live="polite">
+      <button id="backBtn" class="btn-secondary">Back to Menu</button>
+      <article class="card game-shell">
+        <h2 id="gameTitle"></h2>
+        <p id="gameInstructions" class="instructions"></p>
+
+        <div class="score-row">
+          <p id="gameScore">Score: 0</p>
+          <p id="gameHighScore">High Score: 0</p>
+        </div>
+
+        <div id="gameContainer"></div>
+
+        <button id="restartBtn" class="btn-primary">Restart</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
